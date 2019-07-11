@@ -23,7 +23,10 @@ pipeline{
               }
             }
             steps{
-              bat "echo %env.GIT_BRANCH%"
+                script{
+                    println "${env.GIT_BRANCH}"
+                    println "${env.BRANCH_DESIRED_STATE}"
+                }
             }
         }
     }
