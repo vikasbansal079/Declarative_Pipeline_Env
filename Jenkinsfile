@@ -9,8 +9,12 @@ pipeline{
     
     parameters {
         string(name: 'SINGLE_TENANT_NAME', defaultValue: 'create_single_tenant', description: 'Name of the Tenant')
-        string(name: 'GIT_BRANCH', defaultValue: 'patch_7.6.55')
+        string(name: 'GIT_BRANCH', defaultValue: 'origin/master')
     }
+    environment {
+        def BRANCH_DESIRED_STATE = "origin/master"
+    }
+
     stages{
         stage('Run create_single_tenant'){
             when {
