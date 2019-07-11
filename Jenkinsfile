@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 pipeline{
-    agent {label master}
+    agent any
     options {
         buildDiscarder(logRotator(numToKeepStr: '20'))
         timeout(time:240, unit: 'MINUTES')
